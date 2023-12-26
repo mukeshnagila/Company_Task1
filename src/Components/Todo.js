@@ -84,7 +84,7 @@ const Todo = () => {
                 checked={showCompleted}
                 onChange={() => setShowCompleted(!showCompleted)}
                 />
-            </div><hr/>
+            </div><hr style={{ borderColor: 'black' }}/>
 
             <ul>
                 {filteredTodos.map(todo => (<>

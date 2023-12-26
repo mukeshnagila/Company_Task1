@@ -1,7 +1,9 @@
 
 .maincontainer{
     padding: 1% 5%;
-    background-color: rgb(211, 134, 134);
+    /* background-color: rgb(211, 134, 134); */
+    background-color: rgb(195 177 177);
+    border-radius: 30px;
 }
   
 .todoH1{
@@ -56,15 +58,16 @@ li{
 .Btn{
    width: 80%;
    height: 30px;
-   border: 2px solid black;
+   /* border: 2px solid black; */
    border-radius: 20px;
    margin-right: 2%;
    cursor: pointer;
+   text-align: center;
 }
 
 .Btn:hover{
     font-size: 15px;
-    box-shadow: 1px 7px 5px gray;
+    /* box-shadow: 1px 7px 5px gray; */
 }
 
 .underdiv1{
@@ -78,11 +81,13 @@ li{
 }
 
 .editbtn{
-    background-color: #00ffff;
+    /* background-color: #00ffff; */
+    background-color: transparent;
 }
 
 .deletebtn{
-    background-color: #ff0040;
+    /* background-color: #ff0040; */
+    background-color: transparent;
 }
 
 .completebtn{
@@ -117,10 +122,6 @@ li{
     
     .maincontainer{
         padding: 1% 1%;
-    }
-
-    .underdiv2{
-        display: block;
     }
 
     .Btn{

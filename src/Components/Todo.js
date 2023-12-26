@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "../Components/todo.css";
+import { RiDeleteBin5Line } from "react-icons/ri";
+import { FaRegEdit } from "react-icons/fa";
+import { FcOk, FcDownLeft } from "react-icons/fc";
 
 const Todo = () => {
   const [tododata, settododata] = useState([]);
@@ -42,12 +45,12 @@ const Todo = () => {
 
   //for edit the task which is already added
   const HandelEditTask = (id, newTitle) => {
-    if (newTitle.trim() !== '') {
+    if (newTitle !== null && newTitle.trim() !== '') {
         const updatedTodos = tododata.map(todo =>
           todo.id === id ? { ...todo, title: newTitle } : todo
         );
         settododata(updatedTodos);
-    } else {
+    } else if (newTitle !== null) {
         // Display a prompt or alert when the edited task is empty
         alert('Please fill the input box');
     }
@@ -98,14 +101,14 @@ const Todo = () => {
                     
                     <div className='underdiv2'>   
                         { !todo.completed &&
-                        <button className='Btn editbtn' onClick={() => HandelEditTask(todo.id, prompt('Edit task:', todo.title))}>
-                            Edit
-                        </button>
+                        <div className='Btn editbtn' onClick={() => HandelEditTask(todo.id, prompt('Edit task:', todo.title))}>
+                            <FaRegEdit style={{ fontSize: '24px', color: 'royalblue' }}/>
+                        </div>
                         }
-                        <button className='Btn deletebtn' onClick={() => HandelDeleteTask(todo.id)}>Delete</button>
-                        <button className={`Btn ${todo.completed ? 'undobtn' : 'completebtn'}`} onClick={() => toggleTaskStatus(todo.id)}>
-                        {todo.completed ? 'Undo' : 'Complete'}
-                        </button>
+                        <div className='Btn deletebtn' onClick={() => HandelDeleteTask(todo.id)}>< RiDeleteBin5Line style={{ fontSize: '24px', color: 'red'  }}/></div>
+                        <div className={`Btn ${todo.completed ? <FcDownLeft style={{ fontSize: '24px' }}/> : <FcOk style={{ fontSize: '24px' }}/>}`} onClick={() => toggleTaskStatus(todo.id)}>
+                        {todo.completed ? <FcDownLeft style={{ fontSize: '24px' }}/> : <FcOk style={{ fontSize: '24px' }}/>}
+                        </div>
                     </div>
                 </li><hr/>
                 </>

@@ -105,7 +105,7 @@ const Todo = () => {
                             <FaRegEdit style={{ fontSize: '24px', color: 'royalblue' }}/>
                         </div>
                         }
-                        <div className='Btn deletebtn' onClick={() => HandelDeleteTask(todo.id)}>< RiDeleteBin5Line style={{ fontSize: '24px', color: 'red'  }}/></div>
+                        <div className='Btn deletebtn' onClick={() => HandelDeleteTask(todo.id)}>< RiDeleteBin5Line style={{ fontSize: '24px', color: '#f12929'  }}/></div>
                         <div className={`Btn ${todo.completed ? <FcDownLeft style={{ fontSize: '24px' }}/> : <FcOk style={{ fontSize: '24px' }}/>}`} onClick={() => toggleTaskStatus(todo.id)}>
                         {todo.completed ? <FcDownLeft style={{ fontSize: '24px' }}/> : <FcOk style={{ fontSize: '24px' }}/>}
                         </div>

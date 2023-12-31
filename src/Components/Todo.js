@@ -77,13 +77,10 @@ const Todo = () => {
                 <button className="addtaskbtn" onClick={HandelAddTask}>Add Task</button>
             </div>
             <div className='forInput2'>
-                <label>Show Completed Task</label>
-                <input
-                className='input2'
-                type="checkbox"
-                checked={showCompleted}
-                onChange={() => setShowCompleted(!showCompleted)}
-                />
+
+                <button className='btnCheckTask' onClick={() => setShowCompleted(!showCompleted)}>
+                    Check Complete Task
+                </button>
             </div><hr style={{ borderColor: 'black' }}/>
 
             <ul>
